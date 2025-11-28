@@ -6,6 +6,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 
 load_dotenv()
 
+model = ChatOpenAI(model="gpt-4o")
 
 # -------------------------------
 # Load Vector Store
@@ -55,7 +56,6 @@ def ask_question(retriever, question: str):
 
 
 def get_good_answer_from_llm(relevant_docs, question):
-    model = ChatOpenAI(model="gpt-4o")
 
     query_template = f"""
         ## 📝 Question and Context Analysis
